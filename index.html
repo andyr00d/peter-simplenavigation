@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+    <div id="selectionpanel">
+      <span>I want a
+      <input id="txt1"></input><a id="joiner"></a><input id="txt2"></input></span>
+
+      <button id="submit" onclick="getChoices()">Submit</button>
+
+      <script type="text/javascript">
+
+      function getChoices() {
+        var text1 = $("#txt1").val();
+        var text2 = $("#txt2").val();
+
+        if (text1 == "apply" && text2 == "leave"){
+          window.location.assign("https://www.hr.unsw.edu.au/online/myUNSWleave.pdf");
+        }else{
+          alert('Not a valid choice liao!');
+        }
+      }
+
+      $("#txt1").on('change keydown paste input', function(){
+        var text1 = $("#txt1").val();
+
+        if (text1 == "apply"){
+            $("#joiner").html("for");
+          }else{
+                $("#joiner").html("");
+              }
+            });
+
+      </script>
+
+    </div>
+  </body>
+</html>
